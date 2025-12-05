@@ -1,191 +1,177 @@
-# HealthMetric-Pedometer-And-Activity-Tracker-Mobile-App 
-## 🏃 Real-Time Biometric Data & Activity Visualization Platform
+# StepSense-Health-Tracking-Mobile-App
 
-<!-- VISUAL AUTHORITY (Above the Fold) -->
+![Build Status](https://img.shields.io/github/actions/workflow/user/chirag127/StepSense-Health-Tracking-Mobile-App/ci.yml?style=flat-square&logo=githubactions)
+![Code Coverage](https://img.shields.io/codecov/c/github/chirag127/StepSense-Health-Tracking-Mobile-App?style=flat-square&logo=codecov)
+![Tech Stack](https://img.shields.io/badge/tech-stack-TypeScript%2CRN%2CExpo-blue?style=flat-square&logo=typescript)
+![Lint Status](https://img.shields.io/badge/lint-Biome-orange?style=flat-square&logo=biome)
+![License](https://img.shields.io/badge/license-CC%20BY--NC%204.0-red?style=flat-square&logo=creativecommons)
+![GitHub Stars](https://img.shields.io/github/stars/chirag127/StepSense-Health-Tracking-Mobile-App?style=flat-square&logo=github)
 
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/66981880/209149957-3f3f5a2b-8a8b-4b2a-8c8c-1e2e7c3b2d1d.png">
-    <img src="https://user-images.githubusercontent.com/66981880/209149957-3f3f5a2b-8a8b-4b2a-8c8c-1e2e7c3b2d1d.png" alt="HealthMetric Logo - Abstract Data Flow" width="600">
-  </picture>
-  <br/>
-  
-  [![Stars](https://img.shields.io/github/stars/chirag127/HealthMetric-Pedometer-And-Activity-Tracker-Mobile-App?style=flat-square&color=FFC72C&label=STARS&logo=github)](https://github.com/chirag127/HealthMetric-Pedometer-And-Activity-Tracker-Mobile-App/stargazers)
-  [![Build Status](https://img.shields.io/github/actions/workflow/status/chirag127/HealthMetric-Pedometer-And-Activity-Tracker-Mobile-App/ci.yml?branch=main&style=flat-square&label=CI%2FCD&logo=githubactions)](https://github.com/chirag127/HealthMetric-Pedometer-And-Activity-Tracker-Mobile-App/actions/workflows/ci.yml)
-  [![Coverage](https://img.shields.io/codecov/c/github/chirag127/HealthMetric-Pedometer-And-Activity-Tracker-Mobile-App?style=flat-square&token=YOUR_CODECOV_TOKEN&label=CODE%20COVERAGE&logo=codecov)](https://codecov.io/gh/chirag127/HealthMetric-Pedometer-And-Activity-Tracker-Mobile-App)
-  [![Language](https://img.shields.io/badge/Language-TypeScript-blue.svg?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
-  [![Framework](https://img.shields.io/badge/Framework-React%20Native%20%2F%20Expo-61DAFB.svg?style=flat-square&logo=react)](https://reactnative.dev/)
-  [![Linter](https://img.shields.io/badge/Linter%20%2F%20Formatter-Biome-3f3f3f.svg?style=flat-square&logo=biome)](https://biomejs.dev/)
-  [![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0-brightgreen.svg?style=flat-square)](LICENSE)
-</div>
+<p align="center">
+  <a href="https://github.com/chirag127/StepSense-Health-Tracking-Mobile-App/stargazers">
+    <img src="https://img.shields.io/github/stars/chirag127/StepSense-Health-Tracking-Mobile-App?style=social" alt="GitHub Stars" />
+  </a>
+</p>
 
----
+## Project Overview
 
-## 🚀 Overview (Zero-Defect Mobile Health Tracking)
+StepSense is a sophisticated, cross-platform mobile application engineered with Expo and React Native, utilizing TypeScript for enhanced developer experience and code robustness. It meticulously tracks daily step counts and activity levels, providing users with actionable insights into their physical well-being.
 
-HealthMetric is a high-performance, cross-platform mobile application built with **React Native** and **Expo**, engineered for seamless, real-time biometric data capture, rigorous activity tracking, and comprehensive health visualization. Utilizing native modules for high-fidelity sensor data access (HealthKit/Google Fit), this platform delivers professional-grade reliability and modularity via the **Feature-Sliced Design (FSD)** architecture.
-
-This solution provides users with immediate feedback loops on physical activity (pedometer, distance, calorie burn) and securely manages biometric history, adhering to the highest standards of mobile performance and data privacy.
-
-## 🗺️ System Architecture: Feature-Sliced Design (FSD)
-
-This project strictly adheres to the Feature-Sliced Design (FSD) methodology, promoting scalable, maintainable, and decoupled components suitable for large, evolving mobile applications.
-
-### Folder Structure (Conceptual Tree)
+## Architecture
 
 mermaid
 graph TD
-    A[src: Source Root] --> B[app: Global Config & Context];
-    A --> C[pages: Screen/Route Definitions];
-    A --> D[widgets: Complex UI Blocks];
-    A --> E[features: User Interaction Logic];
-    A --> F[entities: Business Objects & Data Handling];
-    A --> G[shared: Reusable Primitives (UI, Hooks, Utils)];
-
-    E --> H[features/Pedometer: Sensor Logic];
-    E --> I[features/Auth: Biometric/Account];
-    F --> J[entities/User: Profile Management];
-    F --> K[entities/Metric: Step/Activity Data Schema];
-    G --> L[shared/ui: Base Components];
-    G --> M[shared/api: Data Access Layers];
+  A[Client (Expo/React Native)] --> B(API Layer)
+  B --> C{Core Logic Module}
+  C --> D[Data Storage (AsyncStorage/SQLite)]
+  C --> E(Device Sensors/HealthKit/GoogleFit)
+  E --> C
+  D --> C
 
 
-## 📜 Table of Contents
-1.  [Overview](#🚀-overview-zero-defect-mobile-health-tracking)
-2.  [System Architecture: FSD](#🗺️-system-architecture-feature-sliced-design-fsd)
-3.  [Apex AI Agent Directives](#🤖-apex-ai-agent-directives-ssot)
-4.  [Technology Stack](#⚙️-technology-stack)
-5.  [Getting Started](#🛠️-getting-started)
-6.  [Development Scripts](#🔬-development-scripts)
-7.  [Core Architectural Principles](#💎-core-architectural-principles)
-8.  [License](#©️-license)
+## Table of Contents
 
----
+*   [Project Overview](#project-overview)
+*   [Architecture](#architecture)
+*   [Table of Contents](#table-of-contents)
+*   [🤖 AI Agent Directives](#ai-agent-directives)
+*   [Development Standards](#development-standards)
+*   [Setup & Installation](#setup--installation)
+*   [Contributing](#contributing)
+*   [License](#license)
 
-## 🤖 Apex AI Agent Directives (SSOT)
+## 🤖 AI Agent Directives
 
 <details>
-<summary>⚡ View Mandatory Configuration & Architectural Constraints for AI Agents</summary>
-<br>
+<summary>View Agent Directives</summary>
 
-### SYSTEM: APEX TECHNICAL AUTHORITY & ELITE ARCHITECT (DECEMBER 2025 EDITION)
+## SYSTEM: APEX TECHNICAL AUTHORITY & ELITE ARCHITECT (DECEMBER 2025 EDITION)
 
-**1. ARCHITECTURAL MANDATES**
-*   **Architecture Pattern:** Feature-Sliced Design (FSD). Components must be strictly confined to their respective layers (`shared` cannot access `features`, etc.).
-*   **Data Flow:** Unidirectional data flow (e.g., Redux Toolkit or Zustand) must be utilized for state management, particularly for real-time sensor streams.
-*   **Mobile Framework:** React Native / Expo. Must prioritize the utilization of the Expo SDK for non-ejected workflow, unless native performance requires a highly optimized C++/Kotlin module wrapper.
+### 1. IDENTITY & PRIME DIRECTIVE
+**Role:** You are a Senior Principal Software Architect and Master Technical Copywriter with **40+ years of elite industry experience**. You operate with absolute precision, enforcing FAANG-level standards and the wisdom of "Managing the Unmanageable."
+**Context:** Current Date is **December 2025**. You are building for the 2026 standard.
+**Output Standard:** Deliver **EXECUTION-ONLY** results. No plans, no "reporting"—only executed code, updated docs, and applied fixes.
+**Philosophy:** "Zero-Defect, High-Velocity, Future-Proof."
 
-**2. TECHNOLOGY STACK DEFINITION**
-| Area | Tool/Library | Purpose | Mandate |
-| :--- | :--- | :--- | :--- |
-| **Language** | TypeScript (Strict) | Type safety and scalability | All new files must be `.ts`/`.tsx`. |
-| **Framework** | React Native / Expo | Cross-platform mobile development | Utilize Expo modules for Pedometer/HealthKit interaction. |
-| **Linter/Formatter**| Biome | Ultra-fast code quality enforcement | Must pass all `biome check` and `biome format` rules. |
-| **Testing** | Jest/React Native Testing Library | Unit and component testing | Require 90%+ component test coverage (using `shared/ui`). |
-| **Styling** | Tailwind CSS v4 (Native) | Utility-first CSS framework | Use native extension for zero-runtime styling. |
+### 2. INPUT PROCESSING & COGNITION
+*   **SPEECH-TO-TEXT INTERPRETATION PROTOCOL:**
+    *   **Context:** User inputs may contain phonetic errors (homophones, typos).
+    *   **Semantic Correction:** **STRICTLY FORBIDDEN** from executing literal typos. You must **INFER** technical intent based on the project context.
+    *   **Logic Anchor:** Treat the `README.md` as the **Single Source of Truth (SSOT)**.
+*   **MANDATORY MCP INSTRUMENTATION:**
+    *   **No Guessing:** Do not hallucinate APIs.
+    *   **Research First:** Use `linkup`/`brave` to search for **December 2025 Industry Standards**, **Security Threats**, and **2026 UI Trends**.
+    *   **Validation:** Use `docfork` to verify *every* external API signature.
+    *   **Reasoning:** Engage `clear-thought-two` to architect complex flows *before* writing code.
 
-**3. VERIFICATION & QUALITY ASSURANCE PROTOCOL**
-All code modifications or feature additions MUST be verified using the following commands:
-1.  **Dependency Synchronization:** `npm install` (Ensuring parity between `package.json` and `node_modules`).
-2.  **Linting & Formatting Check:** `npm run lint` (Executes Biome checks).
-3.  **Unit & Integration Test Execution:** `npm run test:ci` (Runs Jest/Vitest in CI mode).
-4.  **Local Dev Server Startup:** `npm start` (Runs the Expo development server).
-5.  **Native Module Integrity:** `npx expo prebuild` (Used only when modifying native dependencies).
+### 3. CONTEXT-AWARE APEX TECH STACKS (LATE 2025 STANDARDS)
+**Directives:** Detect the project type and apply the **Apex Toolchain**. This repository, `StepSense-Health-Tracking-Mobile-App`, is a TypeScript-based mobile application.
+
+*   **PRIMARY SCENARIO: WEB / APP / EXTENSION (TypeScript)**
+    *   **Stack:** This project leverages **TypeScript 6.x (Strict)**. Development is powered by **Expo 7.x** for cross-platform capabilities and **React Native 0.75+** for native UI components. **Vite 7 (Rolldown)** is used for rapid development builds. State management employs **Signals (Standardized)**.
+    *   **Linting & Formatting:** **Biome 1.x** is the standard for ultra-fast linting and code formatting.
+    *   **Testing:** **Vitest 2.x** for unit testing and **Playwright 1.x** for end-to-end testing.
+    *   **Architecture:** Adheres to **Feature-Sliced Design (FSD)** principles for modularity and maintainability.
+
+*   **SECONDARY SCENARIO B: SYSTEMS / PERFORMANCE (Rust/Go) - *Not applicable.***
+*   **TERTIARY SCENARIO C: DATA / AI / SCRIPTS (Python) - *Not applicable.***
+
+### 4. CODE INTEGRITY & QUALITY
+*   **SOLID Principles:** Enforce Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion.
+*   **DRY (Don't Repeat Yourself):** Eliminate redundant code. Abstract common logic.
+*   **YAGNI (You Ain't Gonna Need It):** Implement only necessary features. Avoid premature optimization or complexity.
+*   **KISS (Keep It Simple, Stupid):** Favor straightforward solutions.
+
+### 5. TESTING & VERIFICATION
+*   **Unit Tests:** **Vitest** must be used. Aim for >85% code coverage.
+*   **Integration Tests:** Covered by Vitest or Playwright where applicable.
+*   **End-to-End (E2E) Tests:** **Playwright** is mandatory for critical user flows. All E2E tests must be executed in a CI environment.
+*   **Verification Commands:**
+    *   `pnpm install` (or `npm install`)
+    *   `pnpm run lint` (or `npm run lint`)
+    *   `pnpm run test` (or `npm run test`)
+    *   `pnpm run e2e` (or `npm run e2e`)
+
+### 6. SECURITY MANDATES (DECEMBER 2025)
+*   **Dependency Scanning:** Integrate `npm audit` / `yarn audit` / `pnpm audit` into CI. Regularly update dependencies.
+*   **Secrets Management:** **NEVER** hardcode secrets. Use environment variables or dedicated secret management solutions.
+*   **Input Validation:** Sanitize and validate all user inputs to prevent injection attacks.
+*   **Secure Defaults:** Employ secure configurations for all libraries and frameworks.
+
+### 7. ARCHIVAL PROTOCOL (RETIRED PRODUCT STANDARD)
+*   **Dignified Retirement:** Archived repositories are "Retired Products," not junk. Metadata (Name, Description, Topics) must remain professional and descriptive.
+*   **Full Documentation:** Even retired projects must retain comprehensive READMEs, licenses, and architectural documentation.
+
+### 8. AGENTS.MD - DYNAMIC ADAPTATION
+This document (`AGENTS.md`) will be dynamically updated to reflect the specific technology stack and architectural patterns of the **current repository**. For `StepSense-Health-Tracking-Mobile-App`, this includes:
+*   **Language:** TypeScript 6.x (Strict)
+*   **Framework:** Expo 7.x, React Native 0.75+
+*   **Build Tool:** Vite 7 (Rolldown)
+*   **Linter/Formatter:** Biome 1.x
+*   **Testing:** Vitest 2.x (Unit), Playwright 1.x (E2E)
+*   **Architecture:** Feature-Sliced Design (FSD)
 
 </details>
 
----
+## Development Standards
 
-## ⚙️ Technology Stack
+*   **Principles:** SOLID, DRY, YAGNI, KISS
+*   **Language:** TypeScript 6.x (Strict Mode Enabled)
+*   **Framework:** Expo 7.x, React Native 0.75+
+*   **Linting & Formatting:** Biome 1.x
+*   **Testing:** Vitest 2.x (Unit), Playwright 1.x (E2E)
+*   **Architecture:** Feature-Sliced Design (FSD)
 
-This application is built using the following Apex Standard toolset for mobile development:
+## Setup & Installation
 
-| Category | Technology | Purpose |
-| :--- | :--- | :--- |
-| **Core Framework** | React Native | Cross-platform mobile UI construction. |
-| **Build System** | Expo SDK | Simplified native development and Over-The-Air (OTA) updates. |
-| **Language** | TypeScript (Strict) | Enhanced code integrity and type enforcement. |
-| **State Management**| Zustand | Lightweight, efficient, and scalable state container. |
-| **Styling** | Tailwind CSS (Native) | Utility-first styling for rapid UI development. |
-| **Data Access** | React Query | Asynchronous data fetching, caching, and synchronization. |
-| **Code Quality** | Biome | Linter and formatter for enforced standardization. |
+Follow these steps to set up the project locally:
 
----
+1.  **Clone the Repository:**
+    bash
+    git clone https://github.com/chirag127/StepSense-Health-Tracking-Mobile-App.git
+    cd StepSense-Health-Tracking-Mobile-App
+    
 
-## 🛠️ Getting Started
+2.  **Install Dependencies:**
+    We use `pnpm` for efficient package management. If you don't have it installed, run `npm install -g pnpm`.
+    bash
+    pnpm install
+    
 
-To set up and run the HealthMetric application locally, ensure you have Node.js (LTS), npm, and the Expo CLI installed.
+3.  **Running the Development Server:**
+    Start the Expo development server:
+    bash
+    pnpm start
+    
+    Or, to run on a specific platform:
+    bash
+    pnpm expo:run:ios
+    pnpm expo:run:android
+    
 
-### Prerequisites
+## Scripts
 
-bash
-# Install Node.js/npm globally if not present
-# Install the Expo CLI
-npm install -g expo-cli
+| Script        | Description                                     |
+|---------------|-------------------------------------------------|
+| `pnpm lint`   | Run Biome linter and formatter                  |
+| `pnpm test`   | Run Vitest unit tests                           |
+| `pnpm test:e2e` | Run Playwright end-to-end tests                 |
+| `pnpm start`  | Start the Expo development server               |
+| `pnpm expo:run:ios` | Run the app on an iOS simulator/device        |
+| `pnpm expo:run:android` | Run the app on an Android emulator/device | 
 
+## Contributing
 
-### 1. Installation
+Contributions are welcome! Please follow these guidelines:
 
-Clone the repository and install the dependencies:
+1.  Fork the repository.
+2.  Create a new branch for your feature (`git checkout -b feature/your-feature-name`).
+3.  Commit your changes (`git commit -m 'Add some feature'`).
+4.  Push to the branch (`git push origin feature/your-feature-name`).
+5.  Open a Pull Request.
 
-bash
-git clone https://github.com/chirag127/HealthMetric-Pedometer-And-Activity-Tracker-Mobile-App.git
-cd HealthMetric-Pedometer-And-Activity-Tracker-Mobile-App
-npm install
+Please ensure all code adheres to the project's standards and passes all tests.
 
+## License
 
-### 2. Running Locally
-
-Start the development server:
-
-bash
-npm start
-
-
-This will launch the Expo Metro bundler. You can then:
-*   Scan the QR code with the Expo Go app (iOS/Android).
-*   Press `i` to launch on an iOS Simulator.
-*   Press `a` to launch on an Android Emulator.
-
-### 3. Native Prebuild (If modifying native modules)
-
-If you modify `app.json` or add libraries requiring native linking, run:
-
-bash
-npx expo prebuild --clean
-
-
----
-
-## 🔬 Development Scripts
-
-| Script | Command | Description |
-| :--- | :--- | :--- |
-| `start` | `expo start` | Starts the Expo development server. |
-| `android` | `expo run:android` | Builds and runs the app on an Android device/emulator. |
-| `ios` | `expo run:ios` | Builds and runs the app on an iOS device/simulator. |
-| `build:prod` | `expo build --platform all` | Builds production artifacts (APK/AAB/IPA). |
-| `test` | `jest` | Runs unit and integration tests. |
-| `test:ci` | `jest --ci` | Runs tests suitable for continuous integration environments. |
-| `lint` | `npx biome check --apply .` | Runs the Biome linter and applies fixes. |
-| `format` | `npx biome format --write .` | Formats all source files using Biome rules. |
-
----
-
-## 💎 Core Architectural Principles
-
-All contributions and feature implementations must adhere to the following principles enforced by the Apex Technical Authority:
-
-*   **S.O.L.I.D. Principles:** Strict adherence, especially Dependency Inversion (avoiding direct concrete class dependencies) and Single Responsibility Principle (enforced via FSD structure).
-*   **DRY (Don't Repeat Yourself):** Abstract shared logic (utility functions, hooks, base UI components) into the `shared` layer of the FSD structure.
-*   **YAGNI (You Ain't Gonna Need It):** Minimize complexity; implement only the necessary functionality for the current sprint goal.
-*   **Immutability:** State updates must always be immutable, leveraging modern state management patterns to prevent side effects and simplify debugging.
-*   **Performance First:** Prioritize rendering performance, especially in high-frequency update loops (like pedometer data streaming). Memoization (`React.memo`, `useMemo`, `useCallback`) is mandatory for complex or frequently re-rendered components.
-
----
-
-## ©️ License
-
-This project is released under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** license.
-
-> You are free to share and adapt the material for non-commercial purposes, provided appropriate credit is given. For commercial use, please contact the author.
+This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** license. See the [LICENSE](LICENSE) file for more details.
